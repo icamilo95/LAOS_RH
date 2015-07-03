@@ -1,2 +1,13 @@
-<h1>Empleados#show</h1>
-<p>Find me in app/views/empleados/show.html.erb</p>
+<h1>Empleado</h1>
+
+Nombre: <%=  @empleado.nombres %> <br>
+Apellidos: <%= @empleado.apellidos %> <br>
+Cedula: <%= @empleado.cedula %> <br>
+Ciudad: <%= @empleado.ciudad %> <br>
+Sexo: <%= @empleado.sexo %> <br>
+Cargo: <%= @empleado.cargo %> <br>
+Puesto: <%= @empleado.puesto %> <br>
+
+<%= link_to "Editar", edit_empleado_path(@empleado), class: "btn btn-warning" %>
+<hr>
+<%= link_to "Indice de Empleados", empleados_path , class: "btn btn-primary" %>

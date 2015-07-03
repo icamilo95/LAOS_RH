@@ -22,16 +22,22 @@ class EmpleadosController < ApplicationController
   end
 
   def show
+   @empleado = Empleado.find params[:id]
   end
 
   def update
-   @empleado = Empleado.find params[:id]
-   if @empleado.update_attributes empleado_params
-      redirect_to root_path
-   else
-      render :edit
-   end
+      @empleado = Empleado.find params[:id]
+      if @empleado.update_attributes empleado_params
+         redirect_to root_path
+      else
+         render :edit
+      end
+  end
 
+  def destroy
+      empleado = Empleado.find params[:id]
+      empleado.destroy
+      redirect_to empleados_path
   end
 
   private
