@@ -1,2 +1,29 @@
-<h1>Empleados#new</h1>
-<p>Find me in app/views/empleados/new.html.erb</p>
+<h1>Agreagar Empleado</h1>
+
+<% if @empleado.errors.any? %>
+   <% @empleado.errors.full_messages.each do |error|%>
+   <p class="text-danger">
+      <%= error%>
+   </p>
+   <% end %>
+<% end %>
+
+
+<%= form_for @empleado do |f| %>
+   <%= f.label :nombres %>
+   <%= f.text_field :nombres %>
+   <%= f.label :apellidos %>
+   <%= f.text_field :apellidos %>
+   <%= f.label :cedula %>
+   <%= f.text_field :cedula %>
+   <%= f.label :ciudad %>
+   <%= f.text_field :ciudad %>
+   <%= f.label :sexo %>
+   <%= f.text_field :sexo %>
+   <%= f.label :cargo %>
+   <%= f.text_field :cargo %>
+   <%= f.label :puesto %>
+   <%= f.text_field :puesto %>
+
+   <%= f.submit "Crear" %>
+<% end %>

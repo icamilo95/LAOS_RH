@@ -1,0 +1,7 @@
+<h1>Empleados index</h1>
+
+<% @empleados.each do |empleado| %>
+   <li><%= empleado.nombres %> - <%= empleado.apellidos %> - <%= empleado.cedula %></li>
+<% end %>
+
+<%= link_to "Agreagar empleado", new_empleado_path %>
