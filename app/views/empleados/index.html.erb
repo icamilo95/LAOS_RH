@@ -1,7 +1,7 @@
 <h1>Empleados index</h1>
 
 <% @empleados.each do |empleado| %>
-   <li><%= empleado.nombres %> - <%= empleado.apellidos %> - <%= empleado.cedula %></li>
+   <li><%= empleado.nombres %> - <%= empleado.apellidos %> - <%= empleado.cedula %> <%= link_to "Editar", edit_empleado_path(empleado) %> </li>
 <% end %>
 
 <%= link_to "Agreagar empleado", new_empleado_path %>
